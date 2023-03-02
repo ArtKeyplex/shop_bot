@@ -43,8 +43,7 @@ class User(models.Model):
                 'first_name': message.from_user.first_name,
                 'last_name': message.from_user.last_name,
                 'language_code': message.from_user.language_code,
-        }
-
+            }
         user, _ = await cls.objects.aget_or_create(user_id=data['user_id'],
                                                    defaults=data)
         return user
